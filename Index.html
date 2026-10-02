@@ -1,0 +1,1953 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Brother's Studio | Cinematic Photography</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#050505;
+    color:#fff;
+    line-height:1.6;
+    overflow-x:hidden;
+}
+
+
+/* ================= HEADER ================= */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(3,3,3,.94);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid rgba(212,175,55,.25);
+    padding:16px 6%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    color:#d4af37;
+    font-size:24px;
+    font-weight:bold;
+    letter-spacing:1px;
+    animation:softFloat 4s ease-in-out infinite;
+}
+
+nav a{
+    color:#ddd;
+    text-decoration:none;
+    margin-left:20px;
+    font-size:14px;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#d4af37;
+}
+
+
+/* ================= HERO ================= */
+
+.hero{
+    min-height:92vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:40px 20px;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,.35),
+        rgba(0,0,0,.78)
+    ),
+    url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1800&q=90")
+    center/cover;
+
+    position:relative;
+}
+
+.hero::after{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background:
+    radial-gradient(
+        circle at center,
+        transparent 35%,
+        rgba(0,0,0,.45) 100%
+    );
+
+    pointer-events:none;
+}
+
+.hero > *{
+    position:relative;
+    z-index:2;
+}
+
+.hero h1{
+    font-size:clamp(42px,10vw,88px);
+    color:#e0b83f;
+    letter-spacing:6px;
+    text-transform:uppercase;
+    font-weight:800;
+
+    text-shadow:
+    0 2px 0 #6f5510,
+    0 0 8px rgba(212,175,55,.28);
+
+    animation:cinematicTitle 4s ease-in-out infinite;
+}
+
+.studio-team{
+    margin-top:10px;
+    color:#f0d77a;
+    font-size:14px;
+    letter-spacing:4px;
+    text-transform:uppercase;
+    font-weight:600;
+
+    text-shadow:
+    0 2px 8px rgba(0,0,0,.9);
+
+    animation:teamCinematic 4s ease-in-out infinite;
+}
+
+.studio-team span{
+    color:#fff;
+    margin:0 8px;
+    font-weight:300;
+}
+
+.studio-team::before{
+    content:"";
+    display:block;
+    width:70px;
+    height:1px;
+    margin:0 auto 10px;
+
+    background:
+    linear-gradient(
+        90deg,
+        transparent,
+        #d4af37,
+        transparent
+    );
+}
+
+.hero h1::after{
+    content:"";
+    display:block;
+    width:130px;
+    height:2px;
+    margin:15px auto 0;
+
+    background:
+    linear-gradient(
+        90deg,
+        transparent,
+        #d4af37,
+        #fff0a8,
+        #d4af37,
+        transparent
+    );
+
+    box-shadow:
+    0 0 7px rgba(212,175,55,.5);
+
+    animation:lineMove 3s ease-in-out infinite;
+}
+
+.hero p{
+    max-width:760px;
+    margin:24px auto 30px;
+    color:#f0f0f0;
+    font-size:clamp(16px,3vw,20px);
+    letter-spacing:2px;
+    line-height:1.8;
+    font-weight:500;
+    text-transform:uppercase;
+
+    text-shadow:
+    0 2px 8px rgba(0,0,0,.9);
+
+    animation:subtitleMove 5s ease-in-out infinite;
+}
+
+
+/* ================= BUTTON ================= */
+
+.btn{
+    display:inline-block;
+    padding:14px 28px;
+
+    border:1px solid #d4af37;
+    border-radius:30px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #d4af37,
+        #f4d77b,
+        #b8860b
+    );
+
+    color:#050505;
+    text-decoration:none;
+    font-weight:bold;
+    cursor:pointer;
+
+    transition:.35s;
+
+    box-shadow:
+    0 0 20px rgba(212,175,55,.15);
+}
+
+.btn:hover{
+    transform:
+    translateY(-4px)
+    scale(1.02);
+
+    box-shadow:
+    0 0 30px rgba(212,175,55,.35);
+}
+
+
+/* ================= SECTIONS ================= */
+
+section{
+    padding:90px 6%;
+}
+
+.title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.title h2{
+    position:relative;
+    display:inline-block;
+
+    color:#d4af37;
+
+    font-size:38px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    font-weight:700;
+
+    text-shadow:
+    0 2px 0 #604b10,
+    0 0 10px rgba(212,175,55,.28);
+
+    animation:
+    sectionTitleMove 4s ease-in-out infinite;
+}
+
+.title h2::after{
+    content:"";
+    display:block;
+    width:85px;
+    height:2px;
+    margin:13px auto 0;
+
+    background:
+    linear-gradient(
+        90deg,
+        transparent,
+        #d4af37,
+        #fff0a8,
+        #d4af37,
+        transparent
+    );
+
+    box-shadow:
+    0 0 7px rgba(212,175,55,.45);
+
+    animation:
+    titleLine 3s ease-in-out infinite;
+}
+
+.title p{
+    margin-top:17px;
+    color:#d6d0bf;
+    font-size:15px;
+    letter-spacing:1.8px;
+    line-height:1.8;
+    font-style:italic;
+
+    text-shadow:
+    0 2px 8px rgba(0,0,0,.8);
+
+    animation:
+    sectionSubtitle 5s ease-in-out infinite;
+}
+
+
+/* ================= ABOUT ================= */
+
+.about{
+    max-width:900px;
+    margin:auto;
+    text-align:center;
+    color:#c9c4b7;
+    font-size:17px;
+    line-height:2;
+}
+
+.about p{
+    padding:5px 10px;
+    transition:.4s;
+}
+
+.about p:hover{
+    color:#eee;
+    transform:translateY(-2px);
+}
+
+
+/* ================= SERVICES ================= */
+
+.tools{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+    gap:22px;
+}
+
+.tool{
+    background:
+    linear-gradient(
+        145deg,
+        #151515,
+        #090909
+    );
+
+    padding:32px 22px;
+    border-radius:18px;
+    text-align:center;
+
+    border:
+    1px solid rgba(212,175,55,.18);
+
+    box-shadow:
+    0 10px 35px rgba(0,0,0,.35);
+
+    transition:.4s;
+}
+
+.tool:hover{
+    transform:translateY(-8px);
+
+    border-color:#d4af37;
+
+    box-shadow:
+    0 12px 40px rgba(212,175,55,.12);
+}
+
+.tool-icon{
+    font-size:38px;
+    color:#d4af37;
+    margin-bottom:15px;
+
+    text-shadow:
+    0 0 10px rgba(212,175,55,.3);
+}
+
+.tool h3{
+    color:#d4af37;
+    margin-bottom:10px;
+    letter-spacing:.8px;
+}
+
+.tool p{
+    color:#999;
+    font-size:14px;
+}
+
+
+/* ================= GALLERY ================= */
+
+.gallery{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(240px,1fr));
+    gap:24px;
+}
+
+.gallery img{
+    width:100%;
+    height:320px;
+    object-fit:cover;
+    border-radius:18px;
+
+    border:
+    1px solid rgba(212,175,55,.55);
+
+    padding:5px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #d4af37,
+        #3b2d0a,
+        #d4af37
+    );
+
+    box-shadow:
+    0 10px 35px rgba(0,0,0,.6),
+    0 0 20px rgba(212,175,55,.08);
+
+    transition:.5s;
+}
+
+.gallery img:hover{
+    transform:
+    scale(1.035)
+    translateY(-6px);
+
+    box-shadow:
+    0 18px 45px rgba(0,0,0,.8),
+    0 0 28px rgba(212,175,55,.22);
+}
+
+
+/* ================= PACKAGES ================= */
+
+.packages{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+    gap:22px;
+}
+
+.package{
+    background:
+    linear-gradient(
+        145deg,
+        #171717,
+        #090909
+    );
+
+    padding:30px 22px;
+    border-radius:18px;
+    text-align:center;
+
+    border:
+    1px solid rgba(212,175,55,.2);
+
+    transition:.4s;
+    position:relative;
+    overflow:hidden;
+}
+
+.package::before{
+    content:"";
+    position:absolute;
+
+    top:0;
+    left:-100%;
+
+    width:100%;
+    height:1px;
+
+    background:
+    linear-gradient(
+        90deg,
+        transparent,
+        #d4af37,
+        transparent
+    );
+
+    transition:.6s;
+}
+
+.package:hover::before{
+    left:100%;
+}
+
+.package:hover{
+    transform:translateY(-7px);
+
+    border-color:#d4af37;
+
+    box-shadow:
+    0 15px 35px rgba(212,175,55,.1);
+}
+
+.package h3{
+    color:#d4af37;
+    font-size:22px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+}
+
+
+/* ================= PREMIUM PRICE ================= */
+
+.price{
+    display:inline-block;
+    position:relative;
+
+    margin:18px 0 20px;
+    padding:8px 18px;
+
+    font-size:30px;
+    font-weight:800;
+    letter-spacing:1px;
+
+    background:
+    linear-gradient(
+        90deg,
+        #b8860b,
+        #f9e79f,
+        #fff4b0,
+        #d4af37,
+        #b8860b
+    );
+
+    -webkit-background-clip:text;
+    background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+    text-shadow:
+    0 0 18px rgba(212,175,55,.18);
+
+    animation:
+    priceShine 4s ease-in-out infinite;
+}
+
+.price::before{
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+    bottom:0;
+
+    width:70%;
+    height:1px;
+
+    transform:translateX(-50%);
+
+    background:
+    linear-gradient(
+        90deg,
+        transparent,
+        #d4af37,
+        transparent
+    );
+}
+
+.price::after{
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:-40%;
+
+    width:20%;
+    height:100%;
+
+    background:
+    linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.65),
+        transparent
+    );
+
+    transform:skewX(-20deg);
+
+    animation:
+    priceLight 4s ease-in-out infinite;
+}
+
+.package p{
+    color:#999;
+    font-size:14px;
+}
+
+
+/* ================= BOOKING ================= */
+
+.form-box{
+    max-width:650px;
+    margin:auto;
+
+    background:
+    linear-gradient(
+        145deg,
+        #151515,
+        #080808
+    );
+
+    padding:32px;
+    border-radius:20px;
+
+    border:
+    1px solid rgba(212,175,55,.25);
+
+    box-shadow:
+    0 15px 45px rgba(0,0,0,.5);
+}
+
+input,
+select,
+textarea{
+    width:100%;
+    padding:15px;
+    margin-bottom:16px;
+
+    background:#080808;
+    color:#fff;
+
+    border:1px solid #333;
+    border-radius:9px;
+    outline:none;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+    border-color:#d4af37;
+
+    box-shadow:
+    0 0 12px rgba(212,175,55,.12);
+}
+
+textarea{
+    height:125px;
+    resize:none;
+}
+
+.form-box .btn{
+    width:100%;
+}
+
+
+/* ================================================= */
+/* ================= CLIENT REVIEWS ================ */
+/* ================================================= */
+
+.review-section{
+    position:relative;
+
+    background:
+    radial-gradient(
+        circle at top,
+        rgba(212,175,55,.06),
+        transparent 45%
+    );
+}
+
+.review-box{
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(240px,1fr));
+
+    gap:25px;
+
+    max-width:1100px;
+
+    margin:auto;
+}
+
+
+/* PREMIUM REVIEW CARD */
+
+.review{
+
+    position:relative;
+
+    background:
+    linear-gradient(
+        145deg,
+        #191919,
+        #080808
+    );
+
+    padding:32px 26px 28px;
+
+    border-radius:18px;
+
+    border:
+    1px solid rgba(212,175,55,.28);
+
+    box-shadow:
+    0 12px 35px rgba(0,0,0,.55),
+    inset 0 0 30px rgba(212,175,55,.025);
+
+    overflow:hidden;
+
+    transition:
+    transform .45s ease,
+    border-color .45s ease,
+    box-shadow .45s ease;
+
+    animation:
+    reviewFloat 5s ease-in-out infinite;
+}
+
+
+/* GOLDEN TOP LINE */
+
+.review::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:50%;
+
+    width:75%;
+    height:2px;
+
+    transform:translateX(-50%);
+
+    background:
+    linear-gradient(
+        90deg,
+        transparent,
+        #b8860b,
+        #fff0a8,
+        #d4af37,
+        transparent
+    );
+
+    box-shadow:
+    0 0 12px rgba(212,175,55,.45);
+
+}
+
+
+/* GOLDEN SHINE */
+
+.review::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:-100%;
+
+    width:55%;
+    height:100%;
+
+    background:
+    linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.045),
+        transparent
+    );
+
+    transform:skewX(-20deg);
+
+    transition:1s;
+
+}
+
+.review:hover::after{
+    left:150%;
+}
+
+.review:hover{
+
+    transform:
+    translateY(-9px)
+    scale(1.015);
+
+    border-color:#d4af37;
+
+    box-shadow:
+    0 18px 45px rgba(0,0,0,.7),
+    0 0 28px rgba(212,175,55,.13);
+}
+
+
+/* QUOTE MARK */
+
+.review-mark{
+
+    color:#d4af37;
+
+    font-size:42px;
+
+    line-height:1;
+
+    font-family:Georgia,serif;
+
+    margin-bottom:10px;
+
+    text-shadow:
+    0 0 12px rgba(212,175,55,.35);
+
+}
+
+
+/* STARS */
+
+.review-stars{
+
+    color:#d4af37;
+
+    letter-spacing:5px;
+
+    font-size:15px;
+
+    margin-bottom:16px;
+
+    text-shadow:
+    0 0 10px rgba(212,175,55,.35);
+
+    animation:
+    starGlow 3s ease-in-out infinite;
+
+}
+
+
+/* REVIEW TEXT */
+
+.review p{
+
+    color:#cfc9ba;
+
+    font-size:15px;
+
+    line-height:1.9;
+
+    font-style:italic;
+
+}
+
+
+/* CLIENT NAME */
+
+.review h4{
+
+    position:relative;
+
+    color:#e2c35c;
+
+    margin-top:20px;
+
+    padding-top:15px;
+
+    font-size:14px;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+}
+
+.review h4::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:45px;
+    height:1px;
+
+    background:#d4af37;
+
+}
+
+
+/* ================= REVIEW ANIMATIONS ================= */
+
+@keyframes reviewFloat{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-4px);
+    }
+}
+
+@keyframes starGlow{
+
+    0%,100%{
+        opacity:.75;
+        text-shadow:
+        0 0 6px rgba(212,175,55,.15);
+    }
+
+    50%{
+        opacity:1;
+        text-shadow:
+        0 0 14px rgba(212,175,55,.5);
+    }
+}
+
+
+/* ================= LET'S TALK ================= */
+
+.lets-talk{
+
+    min-height:500px;
+
+    display:flex;
+    flex-direction:column;
+
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,.58),
+        rgba(0,0,0,.9)
+    ),
+    url("https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1800&q=90")
+    center/cover;
+
+    position:relative;
+}
+
+.lets-talk h2{
+
+    color:#d4af37;
+
+    font-size:clamp(45px,9vw,78px);
+
+    letter-spacing:5px;
+
+    animation:
+    cinematicTitle 4s ease-in-out infinite;
+
+    text-shadow:
+    0 0 12px rgba(212,175,55,.55),
+    0 0 35px rgba(212,175,55,.2);
+}
+
+.lets-talk p{
+
+    max-width:720px;
+
+    margin:18px auto 28px;
+
+    color:#ddd;
+
+    font-size:17px;
+}
+
+
+/* ================= CONTACT ================= */
+
+.contact{
+
+    text-align:center;
+
+    background:#090909;
+}
+
+.contact p{
+
+    color:#aaa;
+
+    margin:10px 0;
+}
+
+.contact strong{
+
+    color:#d4af37;
+}
+
+.whatsapp{
+
+    display:inline-block;
+
+    margin-top:22px;
+
+    padding:13px 26px;
+
+    background:#25d366;
+
+    color:#fff;
+
+    text-decoration:none;
+
+    border-radius:30px;
+
+    font-weight:bold;
+
+    transition:.3s;
+}
+
+.whatsapp:hover{
+
+    transform:
+    translateY(-3px);
+
+    box-shadow:
+    0 8px 25px rgba(37,211,102,.2);
+}
+
+
+/* ================= FOOTER ================= */
+
+footer{
+
+    text-align:center;
+
+    padding:28px 15px;
+
+    background:#020202;
+
+    color:#666;
+
+    border-top:1px solid #161616;
+}
+
+
+/* ================= ANIMATIONS ================= */
+
+@keyframes cinematicTitle{
+
+    0%,100%{
+        transform:
+        translateY(0)
+        scale(1);
+    }
+
+    50%{
+        transform:
+        translateY(-5px)
+        scale(1.012);
+    }
+}
+
+@keyframes teamCinematic{
+
+    0%,100%{
+        opacity:.72;
+        transform:translateY(0);
+        letter-spacing:4px;
+    }
+
+    50%{
+        opacity:1;
+        transform:translateY(-2px);
+        letter-spacing:4.8px;
+    }
+}
+
+@keyframes lineMove{
+
+    0%,100%{
+        transform:scaleX(.75);
+        opacity:.55;
+    }
+
+    50%{
+        transform:scaleX(1.15);
+        opacity:1;
+    }
+}
+
+@keyframes subtitleMove{
+
+    0%,100%{
+        transform:translateY(0);
+        opacity:.88;
+    }
+
+    50%{
+        transform:translateY(-3px);
+        opacity:1;
+    }
+}
+
+@keyframes sectionTitleMove{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-4px);
+    }
+}
+
+@keyframes sectionSubtitle{
+
+    0%,100%{
+        opacity:.72;
+        transform:translateY(0);
+    }
+
+    50%{
+        opacity:1;
+        transform:translateY(-2px);
+    }
+}
+
+@keyframes titleLine{
+
+    0%,100%{
+        transform:scaleX(.75);
+        opacity:.55;
+    }
+
+    50%{
+        transform:scaleX(1.2);
+        opacity:1;
+    }
+}
+
+
+/* ================= PRICE ANIMATION ================= */
+
+@keyframes priceShine{
+
+    0%,100%{
+        transform:scale(1);
+        filter:brightness(1);
+    }
+
+    50%{
+        transform:scale(1.025);
+        filter:brightness(1.12);
+    }
+}
+
+@keyframes priceLight{
+
+    0%{
+        left:-40%;
+        opacity:0;
+    }
+
+    30%{
+        opacity:1;
+    }
+
+    60%{
+        left:120%;
+        opacity:0;
+    }
+
+    100%{
+        left:120%;
+        opacity:0;
+    }
+}
+
+@keyframes softFloat{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-4px);
+    }
+}
+
+
+/* ================= MOBILE ================= */
+
+@media(max-width:700px){
+
+    header{
+        flex-direction:column;
+        gap:12px;
+    }
+
+    nav a{
+        margin:0 7px;
+        font-size:12px;
+    }
+
+    .hero{
+        min-height:82vh;
+    }
+
+    .hero h1{
+        letter-spacing:3px;
+
+        text-shadow:
+        0 2px 0 #6f5510,
+        0 0 7px rgba(212,175,55,.3);
+    }
+
+    .studio-team{
+        font-size:11px;
+        letter-spacing:2.5px;
+    }
+
+    .hero p{
+        letter-spacing:1.2px;
+        line-height:1.7;
+    }
+
+    .title h2{
+        font-size:28px;
+        letter-spacing:2px;
+    }
+
+    .title p{
+        font-size:13px;
+        letter-spacing:1px;
+    }
+
+    .price{
+        font-size:27px;
+        padding:7px 14px;
+    }
+
+    section{
+        padding:65px 5%;
+    }
+
+    .gallery img{
+        height:280px;
+    }
+
+    .review{
+        padding:28px 22px;
+    }
+
+}
+
+
+/* ================= END ================= */
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+    <div class="logo">
+        Brother's Studio
+    </div>
+
+    <nav>
+
+        <a href="#about">About</a>
+
+        <a href="#gallery">Gallery</a>
+
+        <a href="#packages">Packages</a>
+
+        <a href="#book">Book</a>
+
+        <a href="#contact">Contact</a>
+
+    </nav>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+    <h1>
+        Brother's Studio
+    </h1>
+
+    <div class="studio-team">
+
+        OWNER — MOHIT
+
+        <span>•</span>
+
+        ASSISTANT — NISHANT
+
+    </div>
+
+    <p>
+        Professional Wedding & Event Photography
+        — Capturing Emotions, Moments & Memories
+        With A Cinematic Touch.
+    </p>
+
+    <a href="#book" class="btn">
+        Book Photographer
+    </a>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about">
+
+    <div class="title">
+
+        <h2>
+            About Brother's Studio
+        </h2>
+
+        <p>
+            Where every frame becomes a timeless story.
+        </p>
+
+    </div>
+
+    <div class="about">
+
+        <p>
+            Brother's Studio is dedicated to capturing
+            weddings, pre-weddings, birthdays, engagements
+            and special events with creativity and cinematic
+            storytelling.
+        </p>
+
+        <br>
+
+        <p>
+            Every smile, emotion and unforgettable moment
+            deserves to be preserved beautifully.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SERVICES ================= -->
+
+<section>
+
+    <div class="title">
+
+        <h2>
+            Our Services
+        </h2>
+
+        <p>
+            Crafted with creativity. Captured with passion.
+        </p>
+
+    </div>
+
+
+    <div class="tools">
+
+
+        <div class="tool">
+
+            <div class="tool-icon">
+                ◉
+            </div>
+
+            <h3>
+                Professional Photography
+            </h3>
+
+            <p>
+                Creative portraits, candid moments
+                and beautifully composed photographs.
+            </p>
+
+        </div>
+
+
+        <div class="tool">
+
+            <div class="tool-icon">
+                ✦
+            </div>
+
+            <h3>
+                Creative Editing
+            </h3>
+
+            <p>
+                Cinematic editing and professional
+                finishing for your memories.
+            </p>
+
+        </div>
+
+
+        <div class="tool">
+
+            <div class="tool-icon">
+                ▣
+            </div>
+
+            <h3>
+                Photos & Video
+            </h3>
+
+            <p>
+                Complete photography and cinematic
+                video coverage for your events.
+            </p>
+
+        </div>
+
+
+        <div class="tool">
+
+            <div class="tool-icon">
+                ◆
+            </div>
+
+            <h3>
+                Easy Booking
+            </h3>
+
+            <p>
+                Share your event details and
+                book your photography session.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- ================= GALLERY ================= -->
+
+<section id="gallery">
+
+    <div class="title">
+
+        <h2>
+            Our Gallery
+        </h2>
+
+        <p>
+            A glimpse of our cinematic photography.
+        </p>
+
+    </div>
+
+
+    <div class="gallery">
+
+        <img
+        src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1000&q=90"
+        alt="Wedding Photography">
+
+        <img
+        src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1000&q=90"
+        alt="Wedding Couple">
+
+        <img
+        src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1000&q=90"
+        alt="Wedding Event">
+
+        <img
+        src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?auto=format&fit=crop&w=1000&q=90"
+        alt="Wedding Photography">
+
+    </div>
+
+</section>
+
+
+<!-- ================= PACKAGES ================= -->
+
+<section id="packages">
+
+    <div class="title">
+
+        <h2>
+            Photography Packages
+        </h2>
+
+        <p>
+            Every celebration deserves a package crafted for its story.
+        </p>
+
+    </div>
+
+
+    <div class="packages">
+
+
+        <div class="package">
+
+            <h3>
+                Basic
+            </h3>
+
+            <div class="price">
+                ₹36,000
+            </div>
+
+            <p>
+                Photography coverage for
+                small events and special moments.
+            </p>
+
+        </div>
+
+
+        <div class="package">
+
+            <h3>
+                Standard
+            </h3>
+
+            <div class="price">
+                ₹85,000
+            </div>
+
+            <p>
+                Professional photography with
+                creative editing.
+            </p>
+
+        </div>
+
+
+        <div class="package">
+
+            <h3>
+                Premium
+            </h3>
+
+            <div class="price">
+                ₹1,60,000
+            </div>
+
+            <p>
+                Complete photography and
+                cinematic event coverage.
+            </p>
+
+        </div>
+
+
+        <div class="package">
+
+            <h3>
+                Custom
+            </h3>
+
+            <div class="price">
+                Let's Talk
+            </div>
+
+            <p>
+                Tell us about your event
+                and requirements.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- ================= BOOKING ================= -->
+
+<section id="book">
+
+    <div class="title">
+
+        <h2>
+            Book Your Photographer
+        </h2>
+
+        <p>
+            Tell us about your event.
+        </p>
+
+    </div>
+
+
+    <div class="form-box">
+
+        <input
+        type="text"
+        id="name"
+        placeholder="Full Name">
+
+        <input
+        type="tel"
+        id="mobile"
+        placeholder="Mobile Number">
+
+        <input
+        type="email"
+        id="email"
+        placeholder="Email Address">
+
+        <input
+        type="date"
+        id="date">
+
+        <select id="event">
+
+            <option value="">
+                Select Event
+            </option>
+
+            <option>
+                Wedding
+            </option>
+
+            <option>
+                Pre-Wedding
+            </option>
+
+            <option>
+                Birthday
+            </option>
+
+            <option>
+                Engagement
+            </option>
+
+            <option>
+                Other Event
+            </option>
+
+        </select>
+
+        <select id="budget">
+
+            <option value="">
+                Select Budget
+            </option>
+
+            <option>
+                ₹36,000
+            </option>
+
+            <option>
+                ₹85,000
+            </option>
+
+            <option>
+                ₹1,60,000
+            </option>
+
+            <option>
+                Custom Package
+            </option>
+
+        </select>
+
+        <input
+        type="text"
+        id="location"
+        placeholder="Event Location">
+
+        <textarea
+        id="message"
+        placeholder="Tell us about your event..."></textarea>
+
+        <button
+        type="button"
+        class="btn"
+        onclick="bookNow()">
+
+            Submit Booking
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ================================================= */
+/* ================= CLIENT REVIEWS ================= */
+/* ================================================= -->
+
+<section class="review-section">
+
+    <div class="title">
+
+        <h2>
+            Client Reviews
+        </h2>
+
+        <p>
+            Real emotions. Beautiful memories. Timeless stories.
+        </p>
+
+    </div>
+
+
+    <div class="review-box">
+
+
+        <div class="review">
+
+            <div class="review-mark">
+                “
+            </div>
+
+            <div class="review-stars">
+                ★ ★ ★ ★ ★
+            </div>
+
+            <p>
+                Beautiful photography and very
+                professional work. Every important
+                moment was captured naturally.
+            </p>
+
+            <h4>
+                — Happy Client
+            </h4>
+
+        </div>
+
+
+        <div class="review">
+
+            <div class="review-mark">
+                “
+            </div>
+
+            <div class="review-stars">
+                ★ ★ ★ ★ ★
+            </div>
+
+            <p>
+                The photographs had a beautiful
+                cinematic feel and the experience
+                was wonderful.
+            </p>
+
+            <h4>
+                — Happy Client
+            </h4>
+
+        </div>
+
+
+        <div class="review">
+
+            <div class="review-mark">
+                “
+            </div>
+
+            <div class="review-stars">
+                ★ ★ ★ ★ ★
+            </div>
+
+            <p>
+                Amazing memories captured with
+                creativity and attention to detail.
+            </p>
+
+            <h4>
+                — Happy Client
+            </h4>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- ================= LET'S TALK ================= -->
+
+<section class="lets-talk">
+
+    <h2>
+        Let's Talk
+    </h2>
+
+    <p>
+        Planning your next special moment?
+        Tell us about your event, your date
+        and your vision. Let's create memories
+        you'll love looking back on.
+    </p>
+
+    <a href="#book" class="btn">
+        Start Your Booking
+    </a>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section
+id="contact"
+class="contact">
+
+    <div class="title">
+
+        <h2>
+            Contact Brother's Studio
+        </h2>
+
+        <p>
+            Let's discuss your photography requirements.
+        </p>
+
+    </div>
+
+
+    <p>
+        Call:
+        <strong>
+            9423156959
+        </strong>
+    </p>
+
+
+    <p>
+        Brother's Studio, Hapur 245101
+    </p>
+
+
+    <p>
+        Harsh Vihar Colony,
+        Chamri Road, Hapur
+    </p>
+
+
+    <a
+    class="whatsapp"
+    href="https://wa.me/919423156959"
+    target="_blank">
+
+        WhatsApp Us
+
+    </a>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    © 2026 Brother's Studio
+    • Professional Photography
+
+</footer>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+function bookNow(){
+
+    const name =
+    document.getElementById("name").value.trim();
+
+    const mobile =
+    document.getElementById("mobile").value.trim();
+
+    const email =
+    document.getElementById("email").value.trim();
+
+    const date =
+    document.getElementById("date").value;
+
+    const event =
+    document.getElementById("event").value;
+
+    const budget =
+    document.getElementById("budget").value;
+
+    const location =
+    document.getElementById("location").value.trim();
+
+    const message =
+    document.getElementById("message").value.trim();
+
+
+    if(!name || !mobile || !date || !event){
+
+        alert(
+            "Please fill all required details."
+        );
+
+        return;
+
+    }
+
+
+    const text =
+
+`📸 NEW BOOKING REQUEST
+
+Name: ${name}
+Mobile: ${mobile}
+Email: ${email}
+Event: ${event}
+Date: ${date}
+Budget: ${budget}
+Location: ${location}
+Message: ${message}
+
+Brother's Studio
+Owner: Mohit
+Assistant: Nishant
+Hapur`;
+
+
+    const whatsappNumber =
+    "919423156959";
+
+
+    const whatsappURL =
+    "https://wa.me/" +
+    whatsappNumber +
+    "?text=" +
+    encodeURIComponent(text);
+
+
+    window.open(
+        whatsappURL,
+        "_blank"
+    );
+
+}
+
+</script>
+
+
+</body>
+</html>
