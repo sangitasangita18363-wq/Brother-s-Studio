@@ -1,1 +1,984 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Brother's Studio | Professional Photography</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#080808;
+    color:#fff;
+    line-height:1.6;
+}
+
+/* HEADER */
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(5,5,5,.95);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid #292929;
+}
+
+.navbar{
+    max-width:1200px;
+    margin:auto;
+    padding:16px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    color:#ffd700;
+    font-size:23px;
+    font-weight:bold;
+    letter-spacing:1px;
+}
+
+nav a{
+    color:#fff;
+    text-decoration:none;
+    margin-left:20px;
+    font-size:14px;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#ffd700;
+}
+
+/* HERO */
+.hero{
+    min-height:92vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:40px 20px;
+    position:relative;
+    overflow:hidden;
+
+    background:
+    linear-gradient(rgba(0,0,0,.63),rgba(0,0,0,.78)),
+    url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1800&q=85");
+    background-size:cover;
+    background-position:center;
+}
+
+.hero-content{
+    max-width:850px;
+    animation:fadeUp 1.5s ease;
+}
+
+.hero small{
+    color:#ffd700;
+    letter-spacing:4px;
+    text-transform:uppercase;
+    font-weight:bold;
+}
+
+.hero h1{
+    font-size:clamp(48px,10vw,95px);
+    margin:15px 0;
+    line-height:1;
+    letter-spacing:2px;
+    text-shadow:0 5px 30px #000;
+}
+
+.hero h1 span{
+    color:#ffd700;
+}
+
+.hero p{
+    color:#ddd;
+    font-size:18px;
+    max-width:650px;
+    margin:0 auto 30px;
+}
+
+.btn{
+    display:inline-block;
+    padding:14px 28px;
+    background:#ffd700;
+    color:#080808;
+    border:none;
+    border-radius:5px;
+    text-decoration:none;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+    box-shadow:0 8px 25px rgba(255,215,0,.18);
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+    background:#fff;
+}
+
+.btn-outline{
+    background:transparent;
+    color:#fff;
+    border:1px solid #ffd700;
+    margin-left:10px;
+}
+
+.btn-outline:hover{
+    background:#ffd700;
+    color:#000;
+}
+
+/* GENERAL */
+section{
+    max-width:1200px;
+    margin:auto;
+    padding:90px 20px;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.section-title span{
+    color:#ffd700;
+    font-size:13px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+}
+
+.section-title h2{
+    font-size:40px;
+    margin-top:8px;
+}
+
+.section-title p{
+    color:#aaa;
+    margin-top:10px;
+}
+
+/* ABOUT */
+.about{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:45px;
+    align-items:center;
+}
+
+.about-img{
+    min-height:430px;
+    border-radius:14px;
+    background:
+    linear-gradient(rgba(0,0,0,.15),rgba(0,0,0,.35)),
+    url("https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&fit=crop&w=1200&q=85");
+    background-size:cover;
+    background-position:center;
+    box-shadow:0 20px 50px rgba(0,0,0,.5);
+}
+
+.about-text h3{
+    color:#ffd700;
+    font-size:30px;
+    margin-bottom:15px;
+}
+
+.about-text p{
+    color:#bbb;
+    margin-bottom:15px;
+}
+
+/* SERVICES */
+.services{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+}
+
+.service{
+    background:#111;
+    border:1px solid #292929;
+    padding:30px 20px;
+    text-align:center;
+    border-radius:12px;
+    transition:.35s;
+}
+
+.service:hover{
+    transform:translateY(-8px);
+    border-color:#ffd700;
+}
+
+.service-icon{
+    width:60px;
+    height:60px;
+    margin:0 auto 18px;
+    border:1px solid #ffd700;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#ffd700;
+    font-size:25px;
+}
+
+.service h3{
+    margin-bottom:8px;
+}
+
+.service p{
+    color:#999;
+    font-size:14px;
+}
+
+/* GALLERY */
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.gallery-item{
+    height:300px;
+    overflow:hidden;
+    border-radius:10px;
+    position:relative;
+    background:#151515;
+}
+
+.gallery-item img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.6s;
+}
+
+.gallery-item:hover img{
+    transform:scale(1.08);
+}
+
+.gallery-item::after{
+    content:"Brother's Studio";
+    position:absolute;
+    left:15px;
+    bottom:15px;
+    color:#fff;
+    font-size:13px;
+    letter-spacing:1px;
+    opacity:0;
+    transition:.3s;
+    text-shadow:0 2px 10px #000;
+}
+
+.gallery-item:hover::after{
+    opacity:1;
+}
+
+/* PACKAGES */
+.packages{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.package{
+    background:#111;
+    padding:35px 25px;
+    border-radius:12px;
+    text-align:center;
+    border:1px solid #292929;
+    transition:.3s;
+}
+
+.package:hover{
+    transform:translateY(-8px);
+    border-color:#ffd700;
+}
+
+.package.featured{
+    border:1px solid #ffd700;
+    box-shadow:0 15px 40px rgba(255,215,0,.08);
+}
+
+.package h3{
+    color:#ffd700;
+    font-size:22px;
+}
+
+.price{
+    font-size:30px;
+    font-weight:bold;
+    margin:18px 0;
+}
+
+.package p{
+    color:#aaa;
+    margin:8px 0;
+    font-size:14px;
+}
+
+/* BOOKING */
+.booking{
+    background:#0d0d0d;
+    border-top:1px solid #222;
+    border-bottom:1px solid #222;
+}
+
+.form-box{
+    max-width:700px;
+    margin:auto;
+    background:#151515;
+    padding:30px;
+    border-radius:15px;
+    border:1px solid #292929;
+    box-shadow:0 20px 60px rgba(0,0,0,.4);
+}
+
+.form-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+
+input,select,textarea{
+    width:100%;
+    padding:14px;
+    margin-bottom:15px;
+    background:#0b0b0b;
+    color:#fff;
+    border:1px solid #333;
+    border-radius:6px;
+    outline:none;
+}
+
+input:focus,select:focus,textarea:focus{
+    border-color:#ffd700;
+}
+
+textarea{
+    height:130px;
+    resize:none;
+}
+
+.form-box .btn{
+    width:100%;
+    font-size:16px;
+}
+
+/* LET'S TALK */
+.talk{
+    text-align:center;
+    padding:100px 20px;
+    position:relative;
+    overflow:hidden;
+}
+
+.talk h2{
+    font-size:clamp(40px,8vw,75px);
+    color:#ffd700;
+    letter-spacing:2px;
+    animation:cinematic 3s ease-in-out infinite;
+}
+
+.talk p{
+    max-width:700px;
+    margin:15px auto 25px;
+    color:#aaa;
+    font-size:17px;
+}
+
+/* CONTACT */
+.contact-box{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.contact-card{
+    background:#111;
+    border:1px solid #292929;
+    border-radius:12px;
+    padding:30px 20px;
+    text-align:center;
+}
+
+.contact-card .icon{
+    color:#ffd700;
+    font-size:25px;
+    margin-bottom:10px;
+}
+
+.contact-card h3{
+    margin-bottom:7px;
+}
+
+.contact-card p{
+    color:#aaa;
+    font-size:14px;
+}
+
+.contact-card a{
+    color:#ffd700;
+    text-decoration:none;
+}
+
+/* WHATSAPP */
+.whatsapp{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    z-index:999;
+    background:#25d366;
+    color:#fff;
+    text-decoration:none;
+    padding:14px 20px;
+    border-radius:50px;
+    font-weight:bold;
+    box-shadow:0 8px 25px rgba(0,0,0,.5);
+    transition:.3s;
+}
+
+.whatsapp:hover{
+    transform:scale(1.05);
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:30px 20px;
+    border-top:1px solid #222;
+    color:#777;
+    font-size:13px;
+}
+
+footer span{
+    color:#ffd700;
+}
+
+/* ANIMATIONS */
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes cinematic{
+    0%,100%{
+        transform:translateY(0);
+        text-shadow:0 0 5px rgba(255,215,0,.1);
+    }
+    50%{
+        transform:translateY(-7px);
+        text-shadow:0 0 25px rgba(255,215,0,.35);
+    }
+}
+
+/* MOBILE */
+@media(max-width:850px){
+
+    nav{
+        display:none;
+    }
+
+    .about{
+        grid-template-columns:1fr;
+    }
+
+    .services{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .gallery{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .packages{
+        grid-template-columns:1fr;
+    }
+
+    .contact-box{
+        grid-template-columns:1fr;
+    }
+
+    .hero{
+        min-height:85vh;
+    }
+}
+
+@media(max-width:550px){
+
+    section{
+        padding:65px 15px;
+    }
+
+    .services{
+        grid-template-columns:1fr;
+    }
+
+    .gallery{
+        grid-template-columns:1fr 1fr;
+        gap:8px;
+    }
+
+    .gallery-item{
+        height:220px;
+    }
+
+    .form-row{
+        grid-template-columns:1fr;
+        gap:0;
+    }
+
+    .form-box{
+        padding:20px;
+    }
+
+    .btn-outline{
+        margin-left:0;
+        margin-top:10px;
+    }
+
+    .hero p{
+        font-size:15px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="navbar">
+
+<div class="logo">📸 Brother's Studio</div>
+
+<nav>
+<a href="#about">About</a>
+<a href="#services">Services</a>
+<a href="#gallery">Gallery</a>
+<a href="#packages">Packages</a>
+<a href="#booking">Book</a>
+<a href="#contact">Contact</a>
+</nav>
+
+</div>
+</header>
+
+
+<!-- HERO -->
+<section class="hero">
+
+<div class="hero-content">
+
+<small>Professional Photography</small>
+
+<h1>Brother's <span>Studio</span></h1>
+
+<p>
+We capture your most beautiful moments with cinematic photography,
+creative storytelling and professional event coverage.
+</p>
+
+<a href="#booking" class="btn">📅 Book Photographer</a>
+
+<a href="#gallery" class="btn btn-outline">View Gallery</a>
+
+</div>
+
+</section>
+
+
+<!-- ABOUT -->
+<section id="about">
+
+<div class="section-title">
+<span>About Us</span>
+<h2>Stories Behind The Lens</h2>
+<p>Turning your special moments into memories.</p>
+</div>
+
+<div class="about">
+
+<div class="about-img"></div>
+
+<div class="about-text">
+
+<h3>We Capture More Than Photos.</h3>
+
+<p>
+At Brother's Studio, every photograph is created to tell a story.
+From weddings and pre-weddings to birthdays and special events,
+we focus on natural emotions and cinematic details.
+</p>
+
+<p>
+Our goal is simple — to make your important moments look as
+beautiful in photographs as they felt in real life.
+</p>
+
+<a href="#booking" class="btn">Let's Create Memories</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- SERVICES -->
+<section id="services">
+
+<div class="section-title">
+<span>What We Do</span>
+<h2>Our Services</h2>
+<p>Professional photography for every special occasion.</p>
+</div>
+
+<div class="services">
+
+<div class="service">
+<div class="service-icon">◉</div>
+<h3>Wedding</h3>
+<p>Cinematic wedding photography and memorable moments.</p>
+</div>
+
+<div class="service">
+<div class="service-icon">✦</div>
+<h3>Pre-Wedding</h3>
+<p>Creative couple shoots with cinematic storytelling.</p>
+</div>
+
+<div class="service">
+<div class="service-icon">◆</div>
+<h3>Events</h3>
+<p>Professional coverage for birthdays, parties and events.</p>
+</div>
+
+<div class="service">
+<div class="service-icon">▣</div>
+<h3>Photos & Video</h3>
+<p>High-quality photography and event video coverage.</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- GALLERY -->
+<section id="gallery">
+
+<div class="section-title">
+<span>Our Work</span>
+<h2>Featured Gallery</h2>
+<p>A glimpse of the moments we love to capture.</p>
+</div>
+
+<div class="gallery">
+
+<div class="gallery-item">
+<img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=85">
+</div>
+
+<div class="gallery-item">
+<img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=900&q=85">
+</div>
+
+<div class="gallery-item">
+<img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=900&q=85">
+</div>
+
+<div class="gallery-item">
+<img src="https://images.unsplash.com/photo-1465495976277-4387d4b0e4a6?auto=format&fit=crop&w=900&q=85">
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PACKAGES -->
+<section id="packages">
+
+<div class="section-title">
+<span>Photography Plans</span>
+<h2>Our Packages</h2>
+<p>Choose a package according to your event.</p>
+</div>
+
+<div class="packages">
+
+<div class="package">
+
+<h3>Basic</h3>
+
+<div class="price">₹5,000+</div>
+
+<p>✓ Photography</p>
+<p>✓ Selected Edited Photos</p>
+<p>✓ Event Coverage</p>
+<p>✓ Digital Delivery</p>
+
+</div>
+
+
+<div class="package featured">
+
+<h3>Premium</h3>
+
+<div class="price">₹15,000+</div>
+
+<p>✓ Professional Photography</p>
+<p>✓ Cinematic Video</p>
+<p>✓ Edited Photos</p>
+<p>✓ Event Coverage</p>
+<p>✓ Digital Delivery</p>
+
+</div>
+
+
+<div class="package">
+
+<h3>Luxury</h3>
+
+<div class="price">₹25,000+</div>
+
+<p>✓ Complete Photography</p>
+<p>✓ Cinematic Film</p>
+<p>✓ Pre-Wedding Shoot</p>
+<p>✓ Premium Editing</p>
+<p>✓ Full Event Coverage</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- BOOKING -->
+<section id="booking" class="booking">
+
+<div class="section-title">
+<span>Book Your Date</span>
+<h2>Photography Booking</h2>
+<p>Send us your event details and we will contact you.</p>
+</div>
+
+<div class="form-box">
+
+<div class="form-row">
+
+<input type="text" id="name" placeholder="Your Full Name *">
+
+<input type="tel" id="mobile" placeholder="Mobile Number *">
+
+</div>
+
+<div class="form-row">
+
+<input type="email" id="email" placeholder="Email Address">
+
+<input type="date" id="date">
+
+</div>
+
+<select id="event">
+
+<option value="">Select Event *</option>
+<option>Wedding</option>
+<option>Pre-Wedding</option>
+<option>Birthday</option>
+<option>Engagement</option>
+<option>Other Event</option>
+
+</select>
+
+<select id="budget">
+
+<option value="">Select Budget</option>
+<option>₹5,000 - ₹10,000</option>
+<option>₹10,000 - ₹20,000</option>
+<option>₹20,000 - ₹50,000</option>
+<option>₹50,000+</option>
+
+</select>
+
+<input type="text" id="location" placeholder="Event Location">
+
+<textarea id="message" placeholder="Tell us about your event..."></textarea>
+
+<button type="button" class="btn" onclick="bookNow()">
+✅ Submit Booking
+</button>
+
+</div>
+
+</section>
+
+
+<!-- LET'S TALK -->
+<section class="talk">
+
+<div class="section-title">
+
+<span>Let's Create Something Beautiful</span>
+
+<h2>Let's Talk</h2>
+
+<p>
+Have a wedding, pre-wedding, birthday or special event coming up?
+Tell us about your date and vision. We'll help you turn it into
+beautiful memories.
+</p>
+
+<a href="#booking" class="btn">Start Your Booking</a>
+
+</div>
+
+</section>
+
+
+<!-- CONTACT -->
+<section id="contact">
+
+<div class="section-title">
+<span>Get In Touch</span>
+<h2>Contact Brother's Studio</h2>
+<p>Let's discuss your photography requirements.</p>
+</div>
+
+<div class="contact-box">
+
+<div class="contact-card">
+
+<div class="icon">☎</div>
+
+<h3>Phone</h3>
+
+<p>
+<a href="tel:9423156959">9423156959</a>
+</p>
+
+</div>
+
+
+<div class="contact-card">
+
+<div class="icon">⌖</div>
+
+<h3>Studio Location</h3>
+
+<p>
+Brother's Studio<br>
+Hapur 245101<br>
+Harsh Vihar Colony<br>
+Chanri Road, Hapur
+</p>
+
+</div>
+
+
+<div class="contact-card">
+
+<div class="icon">◉</div>
+
+<h3>WhatsApp</h3>
+
+<p>
+<a href="https://wa.me/919423156959" target="_blank">
+Chat With Us
+</a>
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- WHATSAPP -->
+<a class="whatsapp"
+href="https://wa.me/919423156959"
+target="_blank">
+WhatsApp
+</a>
+
+
+<!-- FOOTER -->
+<footer>
+
+© 2026 <span>Brother's Studio</span> • Professional Photography
+
+</footer>
+
+
+<script>
+
+function bookNow(){
+
+    const name = document.getElementById("name").value.trim();
+    const mobile = document.getElementById("mobile").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const date = document.getElementById("date").value;
+    const event = document.getElementById("event").value;
+    const budget = document.getElementById("budget").value;
+    const location = document.getElementById("location").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    if(!name || !mobile || !date || !event){
+
+        alert("Please fill Name, Mobile, Date and Event details.");
+
+        return;
+    }
+
+    const text =
+`📸 NEW BOOKING REQUEST
+
+Name: ${name}
+Mobile: ${mobile}
+Email: ${email || "Not provided"}
+
+Event: ${event}
+Date: ${date}
+Budget: ${budget || "Not specified"}
+
+Location: ${location || "Not provided"}
+
+Message:
+${message || "No additional message"}
+
+Sent from Brother's Studio website.`;
+
+    const whatsappURL =
+    "https://wa.me/919423156959?text=" +
+    encodeURIComponent(text);
+
+    window.open(whatsappURL, "_blank");
+
+}
+
+</script>
+
+</body>
+</html>
